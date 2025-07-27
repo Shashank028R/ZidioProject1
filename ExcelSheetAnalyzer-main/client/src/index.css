@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Default Light Mode Theme */
+  --bg: #f5f5f5;
+  --text: #111;
+  --card: #fff;
+  --border: #ccc;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode overrides */
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f5f5f5;
+  --card: #2a2a2a;
+  --border: #444;
+  --nav:#222
+}
+
+/* Optional gradient for light mode */
+body.light {
+  --bg:  #f5f5f5;
+  --text: #111;
+  --card: #fff;
+  --border: #ccc;
+  --nav:#f5f5f5
+}
+
+/* Utility styles */
+.card {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Black scrollbar */
+.scrollbar-black::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-black::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-black::-webkit-scrollbar-thumb {
+  background-color: var(--border);  /* Black */
+  border-radius: 4px;
+}
+
+.scrollbar-black {
+  scrollbar-color: var(--border) transparent; /* For Firefox */
+  scrollbar-width: thin;             /* For Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease;
+}
